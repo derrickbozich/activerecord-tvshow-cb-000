@@ -21,6 +21,10 @@ class Show < ActiveRecord::Base
     Show.sum(:rating)
   end
 
+  def self.popular_shows
+    Show.where("rating > 5").first
+  end
+
 end
 
 # highest_rating: this method should return the highest value in the ratings column. hint: if there is a minimum Active Record method, might there be a maximum method?

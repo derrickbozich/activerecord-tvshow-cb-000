@@ -25,6 +25,10 @@ class Show < ActiveRecord::Base
     Show.where("rating > 5")
   end
 
+  def self.shows_by_alphabetical_order
+    Show.all.sort
+  end
+
 end
 
 # highest_rating: this method should return the highest value in the ratings column. hint: if there is a minimum Active Record method, might there be a maximum method?
